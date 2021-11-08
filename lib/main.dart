@@ -47,17 +47,21 @@ class _MyHomePageState extends State<MyHomePage> {
           child: ListView.builder(
             itemCount: Recipe.samples.length,
             itemBuilder: (BuildContext context, int index) {
-              return GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return RecipeDetail(recipe: Recipe.samples[index]);
-                      },
-                    ),
-                  );
-                },
+              return Container(
+                height: 200,
+                width: double.infinity,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return RecipeDetail(recipe: Recipe.samples[index]);
+                        },
+                      ),
+                    );
+                  },
+                ),
               );
             },
           ),
